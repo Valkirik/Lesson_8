@@ -1,0 +1,47 @@
+
+
+"""def unic_thing(lst_1: list, lst_2: list) -> list:
+    c = [i for i in lst_1 if i not in lst_2]
+    return f"{c}: the numbers that there are no in the second list"
+
+print(unic_thing([1, 2, 3], [1, 2]))"""
+from itertools import count
+
+"""strng = "Hello world my name is Valery"
+
+a = strng.split(" ")
+print(a)
+new_str = []
+
+for i in a:
+    if len(i) > 5:
+        new_str.append(i[::-1])
+    else:
+        new_str.append(i)"""
+
+
+
+
+"""def rev(strng: str) -> str:
+    lst = strng.split(" ")
+    new_lst = [i[::-1].capitalize() if len(i) > 5 else i for i in lst]
+
+    j = " ".join(new_lst)
+    return j
+
+
+print(rev("Hello Valery how are you"))"""
+
+def numb(lst: list) -> str:
+    n = 0
+    c = lst
+    for i in lst:
+        if count(i)  c:
+            n += 1
+    return n
+
+print([1, 1, 2])
+v = [1, 2, 2, 3]
+print(v.count(2))
+
+
