@@ -32,7 +32,7 @@ for i in a:
 
 print(rev("Hello Valery how are you"))"""
 
-def numb(lst: list) -> str:
+"""def numb(lst: list) -> str:
     n = 0
     c = lst
     for i in lst:
@@ -43,5 +43,22 @@ def numb(lst: list) -> str:
 print([1, 1, 2])
 v = [1, 2, 2, 3]
 print(v.count(2))
+"""
 
 
+"""a = 123432
+c = list(str(a))
+c.sort()
+c.reverse()
+n = int("".join(c))
+
+print(n)"""
+
+def the_biggest(num: int) -> int:
+    lst_num = list(str(num))
+    lst_num.sort()
+    lst_num.reverse()
+    final = int("".join(lst_num))
+    return final
+
+print(the_biggest(123))
