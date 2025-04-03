@@ -5,6 +5,7 @@
     return f"{c}: the numbers that there are no in the second list"
 
 print(unic_thing([1, 2, 3], [1, 2]))"""
+from functools import reduce
 from itertools import count
 
 """strng = "Hello world my name is Valery"
@@ -67,7 +68,7 @@ print(the_biggest(123))"""
 
 
 
-def zero(lst: list) -> list:
+"""def zero(lst: list) -> list:
     without_zero = list(filter(lambda x: x != 0, lst))
     z = lst.count(0)
     print(z)
@@ -78,7 +79,26 @@ def zero(lst: list) -> list:
 
 
 
-print(zero([1, 0, 4, 5, 7, 9, 3, 0, 3, 0, 0, 0, 0, 0, 2]))
+print(zero([1, 0, 4, 5, 7, 9, 3, 0, 3, 0, 0, 0, 0, 0, 2]))"""
+
+def one_num(num: int) -> int:
+    n = num
+    while n > 9:
+        lst = list(str(n))
+        s = reduce(lambda x, y: int(x) + int(y), lst)
+        n = s
+    return n
+
+print(one_num(942))
+
+
+
+
+
+
+
+
+
 
 
 
