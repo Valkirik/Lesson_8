@@ -54,11 +54,31 @@ n = int("".join(c))
 
 print(n)"""
 
-def the_biggest(num: int) -> int:
+"""def the_biggest(num: int) -> int:
     lst_num = list(str(num))
     lst_num.sort()
     lst_num.reverse()
     final = int("".join(lst_num))
     return final
 
-print(the_biggest(123))
+print(the_biggest(123))"""
+
+
+
+
+
+def zero(lst: list) -> list:
+    without_zero = list(filter(lambda x: x != 0, lst))
+    z = lst.count(0)
+    print(z)
+    while z != 0:
+        without_zero.append(0)
+        z -= 1
+    return without_zero
+
+
+
+print(zero([1, 0, 4, 5, 7, 9, 3, 0, 3, 0, 0, 0, 0, 0, 2]))
+
+
+
