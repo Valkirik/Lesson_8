@@ -20,7 +20,7 @@ from curses.ascii import isdigit
 
 #"is2 Thi1s T4est 3a"  ->  "Thi1s is2 3a T4est"
 
-def in_a_row(strng: str) -> str:
+"""def in_a_row(strng: str) -> str:
     lst = list(a)
     l = [i for i in lst if isdigit(i)]
 
@@ -39,7 +39,25 @@ def in_a_row(strng: str) -> str:
 
     return final_list
 
-print("is2 Thi1s T4est 3a is6 Thi5s T7est")
+print("is2 Thi1s T4est 3a is6 Thi5s T7est")"""
+
+
+
+"""def palindrom(num: int) -> int:
+    v = num
+    while v != int("".join(reversed(str(v)))):
+        v += 1
+    return v
+
+print(palindrom(500))"""
+
+
+
+
+
+
+
+
 
 
 
