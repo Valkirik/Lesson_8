@@ -22,10 +22,7 @@ from curses.ascii import isdigit
 
 def in_a_row(strng: str) -> str:
     lst = list(a)
-    l = []
-    for i in lst:
-        if isdigit(i):
-            l.append(i)
+    l = [i for i in lst if isdigit(i)]
 
     lst_with_words = strng.split()
     l.sort()
