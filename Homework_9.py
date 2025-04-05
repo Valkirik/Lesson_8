@@ -20,31 +20,31 @@ from curses.ascii import isdigit
 
 #"is2 Thi1s T4est 3a"  ->  "Thi1s is2 3a T4est"
 
+def in_a_row(strng: str) -> str:
+    lst = list(a)
+    l = []
+    for i in lst:
+        if isdigit(i):
+            l.append(i)
 
-a = "is2 Thi1s T4est 3a is6 Thi5s T7est 8a"
-f = list(a)
-l = []
-for i in f:
-    if isdigit(i):
-        l.append(i)
-print(l)
-s = a.split()
-print(s)
-l.sort()
-print(l)
-print(l[0])
-new = []
+    lst_with_words = strng.split()
+    l.sort()
 
-
-while len(new) < len(s)-1:
-    for i in s:
+    final_list = []
+    while len(final_list) < len(lst_with_words) - 1:
         if str(l[0]) in i:
             l.remove(l[0])
-            new.append(i)
+            final_list.append(i)
+
+    for i in lst_with_words:
+        if i not in final_list:
+            final_list.append(i)
+
+    return final_list
+
+print("is2 Thi1s T4est 3a is6 Thi5s T7est")
 
 
-for i in s:
-    if i not in new:
-        new.append(i)
 
-print(new)
+
+
