@@ -7,9 +7,10 @@ class Car:
     def __str__(self):
         return f"{self.type} {self.color} {self.year}"
 
+    def get_start(self):
+        return "the car is ready to go"
 
 
-    
 
 
 
