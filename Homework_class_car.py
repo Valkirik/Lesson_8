@@ -4,12 +4,12 @@ class Car:
         self.type = type
         self.year = year
 
+    def __str__(self):
+        return f"{self.type} {self.color} {self.year}"
 
 
 
     
-
-
 
 
 
