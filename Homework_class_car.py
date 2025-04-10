@@ -10,7 +10,8 @@ class Car:
     def get_start(self):
         return "the car is ready to go"
 
-
+    def get_stop(self):
+        return "the cat stoped"
 
 
 
