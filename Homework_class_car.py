@@ -15,4 +15,4 @@ class Car:
 
 
 car_1 = Car(type="Audy", color="Silver", year="2019")
-
+print(car_1.get_start)
