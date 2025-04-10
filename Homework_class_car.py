@@ -14,4 +14,5 @@ class Car:
         return "the cat stoped"
 
 
+car_1 = Car(type="Audy", color="Silver", year="2019")
 
