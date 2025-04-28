@@ -20,7 +20,7 @@ class Robot:
                 new_x += 1
             else:
                 new_x -= 1
-                
+
         l = [new_x, new_y]
         for i in l:
             match i:
@@ -32,6 +32,9 @@ class Robot:
                     print("The robot can not move on")
                     return Robot.move(string[:-1])
 
-        return f"x = {new_x}, y = {new_y}"
+        return f"The robot on the cell: x = {new_x}, y = {new_y}"
+
+robot_1 = Robot("R2D2", x=0, y=0)
+print(robot_1.move("u u  r r d"))
 
 
