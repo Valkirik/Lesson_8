@@ -7,4 +7,31 @@ class Robot:
     def __str__(self):
         return f"Rpbot {self.name} is on the spot: x - {self.x}, y = {self.y}"
 
+    @staticmethod
+    def move(string: str):
+        new_x = 0
+        new_y = 0
+        for i in list(string.split()):
+            if i.capitalize() == "U" :
+                new_y += 1
+            elif i.capitalize() == "D":
+                new_y -= 1
+            elif i.capitalize() == "R":
+                new_x += 1
+            else:
+                new_x -= 1
+                
+        l = [new_x, new_y]
+        for i in l:
+            match i:
+                case int() as num if num > 5:
+                    print("The robot can not move on")
+                    return Robot.move(string[:-1])
+
+                case int() as num if num < 0:
+                    print("The robot can not move on")
+                    return Robot.move(string[:-1])
+
+        return f"x = {new_x}, y = {new_y}"
+
 
