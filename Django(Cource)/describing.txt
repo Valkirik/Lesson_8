@@ -1,0 +1,5 @@
+This is a simple project with some models
+(just for practising to understand how to create and connect tables)
+
+Это простой проект с какими-то моделями
+(просто для практики, чтобы понять как создвать и связывать таблицы)
