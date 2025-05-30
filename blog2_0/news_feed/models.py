@@ -1,3 +1,5 @@
+from tkinter.constants import CASCADE
+from tkinter import *
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -22,3 +24,17 @@ class Page(models.Model, DataTimeMixin):
     class Meta:
         verbose_name = "Page"
         verbose_name_plural = "Pages"
+
+
+
+class Post(models.Model, DataTimeMixin):
+    name = models.CharField(max_length=100)
+    content = models.TextField() #does not have limits
+    page = models.ForeignKey(Page, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.pk} - {self.name}"
+
+    class Meta:
+        verbose_name = 'Post'
+        verbose_name_plural = 'Posts'
