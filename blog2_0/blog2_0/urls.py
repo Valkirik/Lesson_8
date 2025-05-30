@@ -16,7 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from news_feed.views import say_hello
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('index/', say_hello)
 ]
