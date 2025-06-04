@@ -2,7 +2,7 @@ from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
 from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
 
-from .models import Page, Post
+from .models import Post, Page
 
 def say_hello(request):
     return HttpResponse("Hello")
@@ -13,12 +13,43 @@ def get_pages_list(request):
     context["all_pages"] = Page.objects.all()
     return render(request, "all_pages.html", context)
 
+
+
+#BESE VIEWS FOR PAGE(CBV)
+class PageListView(ListView):
+    model = Page
+    template_name = "all_pages.html"
+
+
 class PageCreateView(CreateView):
     model = Page
     fields = ["title", "description", "owner"]
-    template_name = ""
+    template_name = "page_create.html"
+    success_url = "all_pages.html"
 
 
+class PageDeleteView(DeleteView):
+    model = Page
+    template_name = "page_delete.html"
+    success_url = "/"
+
+
+class PageUpdateView(UpdateView):
+    model = Page
+    template_name = "page_update.html"
+    fields = ["title", "description"]
+    success_url = "/"
+
+
+class PageDetailView(DetailView):
+    model = Page
+    template_name = "page_detail.html"
+    success_url = "/"
+
+
+
+
+#BESE VIEWS FOR POST (CBV)
 class PostListView(ListView):
     model = Post
     template_name = "all_posts.html"
