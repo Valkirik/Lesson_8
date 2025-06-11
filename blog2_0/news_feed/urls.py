@@ -1,12 +1,10 @@
 from django.urls import path
-from .views import say_hello, get_pages_list, PostListView, \
+from .views import PostListView, \
     PostCreateView, PostDetailView, PostUpdateView, PostDeleteView, \
     PageListView, PageCreateView, PageDeleteView, PageDetailView, PageUpdateView
 
 
 urlpatterns = [
-    path('index/', say_hello),
-    path('pages/', get_pages_list),
     path('posts_list/', PostListView.as_view()),
     path('post_create/', PostCreateView.as_view()),
     path('post/<int:pk>', PostDetailView.as_view()),
