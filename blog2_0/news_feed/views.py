@@ -4,19 +4,12 @@ from django.views.generic import ListView, CreateView, DetailView, UpdateView, D
 
 from .models import Post, Page
 
-def say_hello(request):
-    return HttpResponse("Hello")
 
-
-def get_pages_list(request):
-    context = {}
-    context["all_pages"] = Page.objects.all()
-    return render(request, "all_pages.html", context)
 
 
 
 #BESE VIEWS FOR PAGE(CBV)
-class PageListView(ListView):
+"""class PageListView(ListView):
     model = Page
     template_name = "all_pages.html"
 
@@ -75,6 +68,6 @@ class PostUpdateView(UpdateView):
 class PostDeleteView(DeleteView):
     model = Post
     template_name = "post_delete.html"
-    success_url = "/admin"
+    success_url = "/admin""""
 
 
