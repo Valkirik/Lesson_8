@@ -24,3 +24,18 @@ class PageListCreateAPIView(ListCreateAPIView):
 class PageUpdateAPIView(UpdateAPIView):
     queryset = Page.objects.all()
     serializer_class = PageSerializer
+
+
+class PageRetrivUpdateAPIView(RetrieveUpdateAPIView):
+    queryset = Page.objects.all()
+    serializer_class = PageSerializer
+
+class PageRetrivDestroyAPIView(RetrieveDestroyAPIView):
+    queryset = Page.objects.all()
+    serializer_class = PageSerializer
+
+class PageRetrivUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
+    queryset = Page.objects.all()
+    serializer_class = PageSerializer
+
+
