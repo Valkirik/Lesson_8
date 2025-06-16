@@ -1,14 +1,16 @@
+from itertools import chain
+
 from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView, UpdateAPIView, DestroyAPIView, ListCreateAPIView, RetrieveUpdateAPIView, RetrieveDestroyAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework import permissions
 
 from .models import Page, Post
-from .serializers import PageSerializer, PostSerializer
+from .serializers import PageSerializer, PostSerializer, PostPageSerializer
 
 
 
 class PageListApiView(ListAPIView):
-    queryset = Page.objects.all()
-    serializer_class = PageSerializer
+    queryset = Page.objects.all() #getting objects
+    serializer_class = PageSerializer #turn them into json(XML)
 
 
 class PageCreateAPIView(CreateAPIView):
@@ -39,3 +41,8 @@ class PageRetrivUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
     serializer_class = PageSerializer
 
 
+class PagePostListApiView(ListAPIView):
+    post = Post.objects.all()
+    page = Page.objects.all()
+    queryset = chain(post, page)
+    serializer_class = PostPageSerializer
