@@ -1,13 +1,13 @@
 from itertools import chain
 
 from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView, UpdateAPIView, DestroyAPIView, ListCreateAPIView, RetrieveUpdateAPIView, RetrieveDestroyAPIView, RetrieveUpdateDestroyAPIView
-from rest_framework import permissions
+from rest_framework import permissions, viewsets
 
 from .models import Page, Post
 from .serializers import PageSerializer, PostSerializer, PostPageSerializer
 
 
-
+#HERE WE ARE CREATING VIEWS WITH GENERICS
 class PageListApiView(ListAPIView):
     queryset = Page.objects.all() #getting objects
     serializer_class = PageSerializer #turn them into json(XML)
@@ -46,3 +46,15 @@ class PagePostListApiView(ListAPIView):
     page = Page.objects.all()
     queryset = chain(post, page)
     serializer_class = PostPageSerializer
+
+
+#HERE WE ARE CREATING VIEWS WITH VIEWSET
+class PageViewSet(viewsets.ModelViewSet):
+    serializer_class = PageSerializer
+    queryset =  Page.objects.all()
+    permission_classes = [permissions.AllowAny]
+
+class PostViewSet(viewsets.ModelViewSet):
+    serializer_class = PostSerializer
+    queryset =  Post.objects.all()
+    permission_classes = [permissions.AllowAny]
