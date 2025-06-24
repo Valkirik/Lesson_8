@@ -1,0 +1,1 @@
+cd blog; python manage.py migrate; python mnage.py runserver 0.0.0.0:8000
